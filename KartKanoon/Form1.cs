@@ -25,8 +25,8 @@ namespace KartKanoon
         {
 
             StiReport report = new StiReport();
-            report.RegData("Kanooni", readExecl(@"H:\kart.xlsx"));
-            report.Load(@"E:\Documents\KDZKart.mrt");
+            report.RegData("Kanooni", readExecl(@".\Content\Excel\kart.xlsx"));
+            report.Load(@".\Content\StimulsoftDesigne\KDZKart.mrt");
             report.Show();
         }
 
@@ -35,7 +35,7 @@ namespace KartKanoon
             var workBook = WorkBook.Load(execlFile);
             var sheet = workBook.WorkSheets.FirstOrDefault();
             var members = new List<KDZMember>();
-            for (int i = 1; i < 27; i++)
+            for (int i = 2; i < 27; i++)
             {
                 var name = sheet[$"A{i}"].StringValue;
                 var fatherName = sheet[$"E{i}"].StringValue;
